@@ -17,7 +17,6 @@ end
 
 function call(bs::BrownianSource, t::Real)
 	return Distributions.pdf(bs.d, t) * (1 - bs.d.truncatedprobability)
-	#return Distributions.pdf(bs.d, t)
 end
 
 end
