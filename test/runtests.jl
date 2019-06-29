@@ -1,6 +1,6 @@
-using Base.Test
 import BrownianSources
 import Distributions
+import Test
 
 function sanitycheck()
 	#make sure it reproduces the inverse gaussian in the case of only one brownian motion
@@ -13,7 +13,7 @@ function sanitycheck()
 	ts = linspace(0, upperbound, 1001)
 	pdfs = map(bs, ts)
 	truepdfs = map(t->Distributions.pdf(ig, t), ts)
-	@test maximum(abs(pdfs - truepdfs)) < 1e-4
+	@Test.test maximum(abs(pdfs - truepdfs)) < 1e-4
 end
 
 sanitycheck()

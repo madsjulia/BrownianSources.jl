@@ -3,7 +3,7 @@ module BrownianSources
 import Distributions
 import DistributionSums
 
-type BrownianSource
+struct immutable BrownianSource
 	d::DistributionSums.DistributionSum
 end
 
